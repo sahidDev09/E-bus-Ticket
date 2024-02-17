@@ -6,11 +6,18 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-body{
-    font-family: "Raleway", sans-serif;
+body {
+  font-family: "Raleway", sans-serif;
 }
 
-.hero-seciton{
+.hero-seciton {
+  background-image: url("./images/banner.png");
+}
 
-    background-image: url(./images/banner.png);
+.discout15 {
+  background-image: url("./images/discount15.png");
+}
+
+.discout20 {
+  background-image: url("./images/discount20.png");
 }

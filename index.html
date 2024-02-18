@@ -27,8 +27,8 @@
       referrerpolicy="no-referrer" />
   </head>
 
-  <body class="container mx-auto">
-    <header>
+  <body>
+    <header class="container mx-auto">
       <!-- code for navbar  -->
       <nav>
         <div class="navbar bg-base-100 flex justify-between items-center">
@@ -103,7 +103,7 @@
     <main class="p-2 md:p-0">
       <!-- code for best offer seciton -->
 
-      <section class="bet-offer">
+      <section class="bet-offer container mx-auto">
         <h1 class="text-3xl font-semibold my-16 text-center">
           Best offers for you
         </h1>
@@ -152,7 +152,84 @@
         </button>
       </section>
 
-      <section class="ticktet-section my-20"></section>
+      <section
+        class="ticket-section my-20 border-t-2 border-b-2 py-20 rounded-2xl border-green-600 bg-[#F7F8F8]">
+        <div class="main-bus-section container mx-auto">
+          <h1 class="text-3xl font-sans font-bold my-3 text-center">
+            Luba paribahan
+          </h1>
+          <p class="text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem harum
+            quisquam reiciendis <br />
+            magnam? Vel, voluptatum!
+          </p>
+
+          <!-- bus ticket top bus details section -->
+
+          <div
+            class="top-seat-section flex justify-between bg-white rounded-xl mt-10">
+            <div class="seat-details w-[70%] mt-5">
+              <div
+                class="top-section-left flex justify-between items-center gap-10 p-6">
+                <div class="flex gap-5 items-center">
+                  <img src="./images/bus-logo.png" alt="" />
+                  <div>
+                    <h1 class="text-3xl font-bold">London Express</h1>
+                    <p>Coach-009-WEB- !AC_Business</p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center bg-green-200 p-4 rounded-xl text-green-700 gap-1 font-sans">
+                  <i class="fa-solid fa-couch mr-2"></i
+                  ><span id="seats-id">40</span> seats left
+                </div>
+              </div>
+
+              <div class="bg-[#F7F8F8] mx-4 rounded-md mt-5">
+                <div class="routes flex justify-between p-4">
+                  <h1>Route</h1>
+                  <h1>Dhaka-sylhet</h1>
+                </div>
+                <hr class="divide-dashed m-4" />
+                <div class="Deperture flex justify-between p-4">
+                  <h1>Departure Time</h1>
+                  <h1>9:00PM</h1>
+                </div>
+                <hr class="divide-dashed m-4" />
+
+                <div class="flex gap-5 justify-between p-4">
+                  <h1 class="p-2 bg-gray-300 rounded-md">
+                    Boarding Point - Laxmipur
+                  </h1>
+                  <h1 class="p-2 bg-gray-300 rounded-md">
+                    Droping Point - Bogura
+                  </h1>
+                  <h1 class="p-2 bg-gray-300 rounded-md">Est.Time - 11:00PM</h1>
+                </div>
+              </div>
+            </div>
+
+            <img src="./images/info-devider.png" alt="" />
+            <div
+              class="top-seat-right flex flex-col justify-center items-center mr-20">
+              <img src="./images/fare.png" alt="" />
+              <h1 class="text-2xl font-bold">550 Taka</h1>
+              <p>Per Seats</p>
+            </div>
+          </div>
+
+          <!-- seat section -->
+
+          <div class="flex justify-between mt-10 bg-white p-5 text-start">
+            <div class="seat-side w-[60%] border-2 border-red-500">
+              <h1>Select Your Seat</h1>
+            </div>
+            <div class="seat-info w-[40%] border-2 border-green-400">
+              <h1>Selected seat info</h1>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
   </body>

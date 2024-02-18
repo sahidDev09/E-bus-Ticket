@@ -220,17 +220,202 @@
 
           <!-- seat section -->
 
-          <div class="flex justify-between mt-10 bg-white p-5 text-start">
-            <div class="seat-side w-[60%] border-2 border-red-500">
-              <h1>Select Your Seat</h1>
+          <div class=" md:flex justify-between mt-10 bg-white p-5 text-start">
+            <!-- seat left side -->
+            <div class="seat-side md:w-[57%] p-3 border-r-2 border-gray-300 border-dashed">
+              <h1 class="text-xl font-semibold">Select Your Seat</h1>
+              <hr class="my-5" />
+              <div class="avail-seat flex justify-between">
+                <div class="flex items-center gap-4 text-gray-500">
+                  <i class="fa-solid fa-couch"></i>
+                  <h1>Available</h1>
+                </div>
+
+                <div class="flex items-center gap-4 text-green-600">
+                  <i class="fa-solid fa-couch"></i>
+                  <h1>Selected</h1>
+                </div>
+              </div>
+              <hr class="my-5" />
+
+              <!-- single seats -->
+
+              <div class="seats flex flex-col">
+                <!-- driver seat -->
+                <div class="driver">
+                  <img
+                    src="./images/wheel.png"
+                    class="p-4 px-7 rounded-xl float-end bg-gray-300"
+                    alt="" />
+                </div>
+
+                <!-- seat left side -->
+
+                <div class="main-seats flex justify-between mt-5 gap-10">
+                  <div class="seat-left grid grid-cols-3 items-center gap-4">
+
+                    <h1>A</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">A1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">A2</button>
+                    <h1>B</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">B1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">B2</button>
+                    <h1>C</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">C1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">C2</button>
+
+                    <h1>D</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">D1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">D2</button>
+
+                    <h1>E</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">E1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">E2</button>
+
+                    <h1>F</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">F1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">F2</button>
+
+                    <h1>G</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">G1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">G2</button>
+
+                    <h1>H</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">H1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">H2</button>
+
+                    <h1>I</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">I1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">I2</button>
+
+                    <h1>J</h1>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">J1</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">J2</button>
+
+                  </div>
+                  
+                  <!-- seat right side -->
+
+                  <div class="seat-right grid grid-cols-2 items-center gap-4">
+
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">A3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">A4</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">B3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">B4</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">C3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">C4</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">D3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">D4</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">E3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">E4</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">F3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">F4</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">G3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">G4</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">H3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">H4</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">I3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">I4</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">J3</button>
+                    <button class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">J4</button>
+                    
+
+                  </div>
+
+                </div>
+
+               
+              </div>
             </div>
-            <div class="seat-info w-[40%] border-2 border-green-400">
-              <h1>Selected seat info</h1>
+
+        
+
+            <div class="seat-info md:w-[43%] p-3">
+              <h1 class="text-xl font-semibold">Selected seat info</h1>
+              <hr class="my-5" />
+
+              <div class="tickets-count bg-gray-100 p-6 rounded-xl">
+                <div class=" flex justify-between items-center">
+                  <h1>Seat <span class="px-2 py-1 rounded-full bg-green-500 text-white">2</span></h1>
+                  <h1>Class</h1>
+                  <h1>Price</h1>
+                </div>
+                <hr class="my-5">
+
+                <div class=" flex justify-between items-center mb-5">
+                  <p>C2</p>
+                  <p>Economoy</p>
+                  <p>550</p>
+                </div>
+
+                
+
+                <div class=" flex justify-between items-center">
+                  <p>C2</p>
+                  <p>Economoy</p>
+                  <p>550</p>
+                </div>
+
+                <hr class="my-5">
+
+                <div class="total-container flex justify-between items-center font-semibold">
+
+                  <h1>Total Price</h1>
+                  <h1>BDT <span>1100</span></h1>
+
+                </div>
+
+                <!-- coupon input -->
+
+                <div class=" p-2 bg-white flex justify-between my-6 rounded-xl">
+                  <input class="pr-10" type="text" placeholder="Have any coupon ? ">
+                  <button class="appy-btn bg-green-600 text-white p-4 px-8 font-semibold rounded-xl ">Apply</button>
+                </div>
+
+                <div class="total-container flex justify-between items-center font-semibold">
+
+                  <h1>Grand Total</h1>
+                  <h1>BDT <span>1100</span></h1>
+
+                </div>
+                
+              </div>
+
+              <div class="name my-10">
+
+                <h1 class="text-xl font-semibold">Passenger Name*</h1>
+                <input class="p-4 border-[1px] w-full my-2 rounded-xl" type="text" placeholder=" Enter your name">
+
+              </div>
+
+              <div class="number my-5">
+
+                <h1 class="text-xl font-semibold">Passenger Number*</h1>
+                <input class="p-4 border-[1px] w-full my-2 rounded-xl" type="number" placeholder=" Enter your phone number">
+
+              </div>
+
+              <div class="name my-5">
+
+                <h1 class="text-xl font-semibold">Email ID</h1>
+                <input class="p-4 border-[1px] w-full my-2 rounded-xl" type="email" placeholder=" Enter your email id">
+
+              </div>
+
+              <input class="p-4 bg-green-600 w-full my-2 rounded-xl text-white text-xl font-semibold" type="submit" value="Next">
+
+              <div class=" flex justify-evenly my-5">
+                <h1 class="underline">Terms and Conditions</h1>
+                <h1 class="underline">Cancellation Policy</h1>
+              </div>
+
             </div>
           </div>
         </div>
       </section>
     </main>
     <footer></footer>
+
+    <script src="index.js"></script>
   </body>
 </html>

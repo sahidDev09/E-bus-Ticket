@@ -256,98 +256,118 @@
                   <div class="seat-left grid grid-cols-3 items-center gap-4">
                     <h1>A</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       A1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       A2
                     </button>
                     <h1>B</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       B1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       B2
                     </button>
                     <h1>C</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       C1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       C2
                     </button>
 
                     <h1>D</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       D1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       D2
                     </button>
 
                     <h1>E</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       E1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       E2
                     </button>
 
                     <h1>F</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       F1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       F2
                     </button>
 
                     <h1>G</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       G1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       G2
                     </button>
 
                     <h1>H</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       H1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       H2
                     </button>
 
                     <h1>I</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       I1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       I2
                     </button>
 
                     <h1>J</h1>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       J1
                     </button>
                     <button
+                      id="seat-title-id"
                       class="btn-seat py-6 px-9 rounded-xl float-end bg-gray-100">
                       J2
                     </button>
@@ -449,7 +469,9 @@
                 <div class="flex justify-between items-center">
                   <h1>
                     Seat
-                    <span id="select-seat-id" class="px-2 py-1 rounded-full bg-green-500 text-white"
+                    <span
+                      id="select-seat-id"
+                      class="px-2 py-1 rounded-full bg-green-500 text-white"
                       >0</span
                     >
                   </h1>
@@ -458,16 +480,12 @@
                 </div>
                 <hr class="my-5" />
 
-                <div class="flex justify-between items-center mb-5">
-                  <p>C2</p>
-                  <p>Economoy</p>
-                  <p>550</p>
-                </div>
-
-                <div class="flex justify-between items-center">
-                  <p>C2</p>
-                  <p>Economoy</p>
-                  <p>550</p>
+                <div
+                  id="title-price-container"
+                  class="flex justify-between items-center mb-5">
+                  <div id="seatT"></div>
+                  <div id="eco" class="text-green-500"></div>
+                  <div id="priceT"></div>
                 </div>
 
                 <hr class="my-5" />
@@ -475,17 +493,28 @@
                 <div
                   class="total-container flex justify-between items-center font-semibold">
                   <h1>Total Price</h1>
-                  <h1>BDT <span>1100</span></h1>
+                  <h1>BDT <span id="total-price-id">0</span></h1>
+                </div>
+
+                <div
+                  id="dis-perent"
+                  class="total-container flex justify-between items-center font-semibold text-red-400">
+                  <h1>Discount</h1>
+                  <h1>BDT <span id="discount-price-id">0</span></h1>
                 </div>
 
                 <!-- coupon input -->
 
-                <div class="p-2 bg-white flex justify-between my-6 rounded-xl">
+                <div
+                  id="inputCuponDiv"
+                  class="p-2 bg-white flex justify-between my-6 rounded-xl">
                   <input
+                    id="input-value"
                     class="pr-10"
                     type="text"
                     placeholder="Have any coupon ? " />
                   <button
+                    id="coupon-btn"
                     class="appy-btn bg-green-600 text-white p-4 px-8 font-semibold rounded-xl">
                     Apply
                   </button>
@@ -494,38 +523,42 @@
                 <div
                   class="total-container flex justify-between items-center font-semibold">
                   <h1>Grand Total</h1>
-                  <h1>BDT <span>1100</span></h1>
+                  <h1>BDT <span id="grand-total">0</span></h1>
                 </div>
               </div>
 
-              <div class="name my-10">
-                <h1 class="text-xl font-semibold">Passenger Name*</h1>
-                <input
-                  class="p-4 border-[1px] w-full my-2 rounded-xl"
-                  type="text"
-                  placeholder=" Enter your name" />
-              </div>
+              <form action="">
+                <div class="name my-10">
+                  <h1 class="text-xl font-semibold">Passenger Name*</h1>
+                  <input
+                    class="p-4 border-[1px] w-full my-2 rounded-xl"
+                    type="text"
+                    placeholder=" Enter your name" />
+                </div>
 
-              <div class="number my-5">
-                <h1 class="text-xl font-semibold">Passenger Number*</h1>
-                <input
-                  class="p-4 border-[1px] w-full my-2 rounded-xl"
-                  type="number"
-                  placeholder=" Enter your phone number" />
-              </div>
+                <div class="number my-5">
+                  <h1 class="text-xl font-semibold">Passenger Number*</h1>
+                  <input
+                    class="p-4 border-[1px] w-full my-2 rounded-xl"
+                    type="number"
+                    placeholder=" Enter your phone number"
+                    required />
+                </div>
 
-              <div class="name my-5">
-                <h1 class="text-xl font-semibold">Email ID</h1>
-                <input
-                  class="p-4 border-[1px] w-full my-2 rounded-xl"
-                  type="email"
-                  placeholder=" Enter your email id" />
-              </div>
+                <div class="name my-5">
+                  <h1 class="text-xl font-semibold">Email ID</h1>
+                  <input
+                    class="p-4 border-[1px] w-full my-2 rounded-xl"
+                    type="email"
+                    placeholder=" Enter your email id" />
+                </div>
 
-              <input
-                class="p-4 bg-green-600 w-full my-2 rounded-xl text-white text-xl font-semibold"
-                type="submit"
-                value="Next" />
+                <input
+                  id="submit-btn"
+                  class="p-4 bg-green-600 w-full my-2 rounded-xl text-white text-xl font-semibold"
+                  type="submit"
+                  value="Next" />
+              </form>
 
               <div class="flex justify-evenly my-5">
                 <h1 class="underline">Terms and Conditions</h1>

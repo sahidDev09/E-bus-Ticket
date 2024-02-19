@@ -104,10 +104,60 @@ for (let index = 0; index < seats.length; index++) {
       }
     });
 
+    //next button and modal fucntio
 
-    //next button and modal fucntion
+    const next = document.getElementById("next-btn");
+  next.addEventListener("click", function () {
+    if (selectSeatcount == 0) {
+      alert("Select seat");
+    } else {
+      const header = document.getElementById("header-id");
+      header.classList.add("hidden");
+      const main = document.getElementById("main-id");
+      main.classList.add("hidden");
 
-   
+      const modal = document.getElementById("modal-id");
+      modal.classList.remove("hidden");
+    }
+  });
+
 
   });
+
+  const next = document.getElementById("next-btn");
+  next.addEventListener("click", function () {
+    if (selectSeatcount == 0) {
+      alert("Select seat");
+    } else {
+      const header = document.getElementById("header-id");
+      header.classList.add("hidden");
+      const main = document.getElementById("main-id");
+      main.classList.add("hidden");
+
+      const modal = document.getElementById("modal-id");
+      modal.classList.remove("hidden");
+    }
+  });
+
+  // continue btn
+
+  const conti = document.getElementById("continue-btn");
+  conti.addEventListener("click", function () {
+    const header = document.getElementById("header-id");
+    header.classList.remove("hidden");
+    const main = document.getElementById("main-id");
+    main.classList.remove("hidden");
+
+    const modal = document.getElementById("modal-id");
+    modal.classList.add("hidden");
+  });
+
+
 }
+
+$("button").click(function() {
+  $('html,body').animate({
+      scrollTop: $(".second").offset().top},
+      'slow');
+});
+

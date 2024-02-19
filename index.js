@@ -1,13 +1,16 @@
 const maxSeat = 4;
 let selectSeatcount = 0;
+let availableSeatscount = 40;
 let totalPrice = 0;
 
 const seats = document.querySelectorAll(".btn-seat");
 
-seats.forEach((seat) => {
-  seat.addEventListener("click", () => {
+for (let i = 0; i < seats.length; i++) {
+  const seat = seats[i];
+
+  seat.addEventListener("click", function () {
     if (selectSeatcount >= maxSeat || seat.classList.contains("selected")) {
-      alert("You can only select a maximum of 4 seats at once.");
+      alert("You already select me please choose another one.");
       return;
     }
 
@@ -17,7 +20,9 @@ seats.forEach((seat) => {
     updateSeatDisplay();
     updatePrice();
   });
-});
+}
+
+// all buttons
 
 const couponBtn = document.getElementById("coupon-btn");
 couponBtn.addEventListener("click", applyCoupon);
@@ -31,7 +36,13 @@ continueBtn.addEventListener("click", showPreviousModal);
 function updateSeatDisplay() {
   const showSeat = document.getElementById("select-seat-id");
   showSeat.innerText = selectSeatcount;
+
+  availableSeatscount--;
+  const availableSeats = document.getElementById("seats-id");
+  availableSeats.innerText = availableSeatscount;
 }
+
+//price ccalculaton
 
 function updatePrice() {
   const ticketFear = 550;
@@ -41,6 +52,8 @@ function updatePrice() {
   tPrice.innerText = gPrice.innerText = totalPrice.toFixed(2);
 }
 
+//code for cupon
+
 function applyCoupon() {
   const couponCode = document
     .getElementById("input-value")
@@ -48,8 +61,13 @@ function applyCoupon() {
     .toUpperCase();
 
   if (selectSeatcount === 4) {
-    const discountPercentage =
-      couponCode === "NEW15" ? 15 : couponCode === "COUPLE20" ? 20 : 0;
+    let discountPercentage = 0;
+
+    if (couponCode === "NEW15") {
+      discountPercentage = 15;
+    } else if (couponCode === "COUPLE20") {
+      discountPercentage = 20;
+    }
 
     if (discountPercentage > 0) {
       const discountAmount = (totalPrice * discountPercentage) / 100;

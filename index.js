@@ -1,112 +1,145 @@
 const maxSeat = 4;
-let selectSeatcount = 0;
 let availableSeatscount = 40;
+let selectSeatcount = 0;
+const ticketFear = 550;
 let totalPrice = 0;
 
 const seats = document.querySelectorAll(".btn-seat");
 
-for (let i = 0; i < seats.length; i++) {
-  const seat = seats[i];
+for (let index = 0; index < seats.length; index++) {
+  const seat = seats[index];
 
   seat.addEventListener("click", function () {
-    if (selectSeatcount >= maxSeat || seat.classList.contains("selected")) {
-      alert("You already select me please choose another one.");
+    if (selectSeatcount >= maxSeat) {
+      alert("You can only select a maximum of 4 seats at once.");
+      return;
+    } else if (seat.classList.contains("selected")) {
+      alert("Seat already selected. Please choose a different seat.");
       return;
     }
 
     seat.classList.add("bg-green-500", "text-white", "selected");
+    availableSeatscount--;
     selectSeatcount++;
 
-    updateSeatDisplay();
-    updatePrice();
+    // Available seat count display
+    const availableSeats = document.getElementById("seats-id");
+    availableSeats.innerText = availableSeatscount;
+
+    // selected seat count display
+    const showSeat = document.getElementById("select-seat-id");
+    showSeat.innerText = selectSeatcount;
+
+    // get seat title
+    const title = seat.innerText;
+
+    // display seat title and price details
+    const seatT = document.getElementById("seatT");
+    const eco = document.getElementById("eco");
+    const priceT = document.getElementById("priceT");
+
+    const p1 = document.createElement("p");
+    p1.innerText = title;
+
+    const p2 = document.createElement("p");
+    p2.innerText = "Economy";
+
+    const p3 = document.createElement("p");
+    p3.innerText = "BDT 550";
+
+    seatT.appendChild(p1);
+    eco.appendChild(p2);
+    priceT.appendChild(p3);
+
+    // price calculation
+    totalPrice += ticketFear;
+
+    const tPrice = document.getElementById("total-price-id");
+    const gPrice = document.getElementById("grand-total");
+    tPrice.innerText = totalPrice;
+    gPrice.innerText = totalPrice;
+
+    const discount = document.getElementById("discount-price-id").innerText;
+    gPrice.innerText = totalPrice - discount;
+
+    // coupon code
+    const couponBtn = document.getElementById("coupon-btn");
+
+    couponBtn.addEventListener("click", function () {
+      const couponElement = document.getElementById("input-value").value;
+      const couponCode = couponElement.split(" ").join("").toUpperCase();
+
+      if (selectSeatcount === 4) {
+        if (couponCode === "NEW15") {
+          const cuponPerent = document.getElementById("inputCuponDiv");
+          cuponPerent.classList.add("hidden");
+          const discount = document.getElementById("discount-price-id");
+          const disAmount15 = (totalPrice * 15) / 100;
+          discount.innerText = disAmount15;
+
+          //show discount div
+
+          const showDis = document.getElementById("dis-perent");
+          showDis.classList.remove("hidden");
+
+          const gPrice = document.getElementById("grand-total");
+          gPrice.innerText = totalPrice - disAmount15;
+        } else if (couponCode === "COUPLE20") {
+          const cuponPerent = document.getElementById("inputCuponDiv");
+          cuponPerent.classList.add("hidden");
+
+          //discount show
+
+          const showDis = document.getElementById("dis-perent");
+          showDis.classList.remove("hidden");
+
+          const discount = document.getElementById("discount-price-id");
+          const disAmount20 = (totalPrice * 20) / 100;
+          discount.innerText = disAmount20;
+
+          const gPrice = document.getElementById("grand-total");
+          gPrice.innerText = totalPrice - disAmount20;
+        } else {
+          alert("Invalid Coupon Code");
+        }
+      } else if (selectSeatcount == 0) {
+        couponBtn.setAttribute("disabled", true);
+      } else {
+        alert("You have to buy 4 tickets for applying the coupon code");
+      }
+    });
   });
 }
 
-// all buttons
+// Next button
+const next = document.getElementById("next-btn");
+next.addEventListener("click", function () {
+  const inputNum = document.getElementById("numner-id");
+  const inputNumber = inputNum.value.trim();
 
-const couponBtn = document.getElementById("coupon-btn");
-couponBtn.addEventListener("click", applyCoupon);
-
-const nextBtn = document.getElementById("next-btn");
-nextBtn.addEventListener("click", showNextModal);
-
-const continueBtn = document.getElementById("continue-btn");
-continueBtn.addEventListener("click", showPreviousModal);
-
-function updateSeatDisplay() {
-  const showSeat = document.getElementById("select-seat-id");
-  showSeat.innerText = selectSeatcount;
-
-  availableSeatscount--;
-  const availableSeats = document.getElementById("seats-id");
-  availableSeats.innerText = availableSeatscount;
-}
-
-//price ccalculaton
-
-function updatePrice() {
-  const ticketFear = 550;
-  totalPrice = selectSeatcount * ticketFear;
-  const tPrice = document.getElementById("total-price-id");
-  const gPrice = document.getElementById("grand-total");
-  tPrice.innerText = gPrice.innerText = totalPrice.toFixed(2);
-}
-
-//code for cupon
-
-function applyCoupon() {
-  const couponCode = document
-    .getElementById("input-value")
-    .value.trim()
-    .toUpperCase();
-
-  if (selectSeatcount === 4) {
-    let discountPercentage = 0;
-
-    if (couponCode === "NEW15") {
-      discountPercentage = 15;
-    } else if (couponCode === "COUPLE20") {
-      discountPercentage = 20;
-    }
-
-    if (discountPercentage > 0) {
-      const discountAmount = (totalPrice * discountPercentage) / 100;
-      const discountElement = document.getElementById("discount-price-id");
-      discountElement.innerText = discountAmount.toFixed(2);
-
-      const gPrice = document.getElementById("grand-total");
-      gPrice.innerText = (totalPrice - discountAmount).toFixed(2);
-
-      const cuponPerent = document.getElementById("inputCuponDiv");
-      cuponPerent.classList.add("hidden");
-    } else {
-      alert("Invalid Coupon Code");
-    }
+  if (selectSeatcount === 0 || inputNumber.length === 0) {
+    alert("Select seat and enter passenger number");
   } else {
-    alert("You have to buy 4 tickets for a discount.");
+    const header = document.getElementById("header-id");
+    header.classList.add("hidden");
+
+    const main = document.getElementById("main-id");
+    main.classList.add("hidden");
+
+    const modal = document.getElementById("modal-id");
+    modal.classList.remove("hidden");
   }
-}
+});
 
-function showNextModal() {
-  if (selectSeatcount === 0) {
-    alert("Select a seat");
-  } else {
-    hideElement("header-id");
-    hideElement("main-id");
-    showElement("modal-id");
-  }
-}
+// Continue button
+const conti = document.getElementById("continue-btn");
+conti.addEventListener("click", function () {
+  const header = document.getElementById("header-id");
+  header.classList.remove("hidden");
 
-function showPreviousModal() {
-  showElement("header-id");
-  showElement("main-id");
-  hideElement("modal-id");
-}
+  const main = document.getElementById("main-id");
+  main.classList.remove("hidden");
 
-function hideElement(elementId) {
-  document.getElementById(elementId).classList.add("hidden");
-}
-
-function showElement(elementId) {
-  document.getElementById(elementId).classList.remove("hidden");
-}
+  const modal = document.getElementById("modal-id");
+  modal.classList.add("hidden");
+});
